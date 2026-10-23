@@ -6,9 +6,7 @@ const stats = [
   { value: "2", label: "Engineers" },
   { value: "5", label: "Months" },
   { value: "$300K", label: "ARR" },
-  { value: "$3M+", label: "Pipeline" },
-  { value: "20", label: "Districts" },
-  { value: "0", label: "Critical Errors" },
+  { value: "0", label: "Critical Pen-Test Findings" },
 ];
 
 export default function CaseStudy() {
@@ -52,7 +50,7 @@ export default function CaseStudy() {
             <span className="text-blue-400">$300K ARR.</span>
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-14">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-14">
             {stats.map((stat, i) => (
               <div
                 key={i}
@@ -72,12 +70,12 @@ export default function CaseStudy() {
           </div>
 
           <p className="text-zinc-400 leading-relaxed max-w-3xl mx-auto text-center text-lg font-light">
-            At <a href="https://www.impactsuite.com/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors underline underline-offset-2 decoration-blue-400/30 hover:decoration-blue-300">Impact Suite</a>, a 2-person dev team built a full K-12 safety
-            platform in 5 months &mdash; a project that would typically require
-            10 engineers and a year. The platform achieved $300K ARR and $3M+
-            pipeline by October 2025, serving 20 school districts. It passed a
-            penetration test with 0 critical errors &mdash; and almost every
-            line was written with Claude Code.
+            A 2-person dev team built a full regulated-industry SaaS platform in
+            5&nbsp;months&mdash;a project that would typically require
+            10&nbsp;engineers and a year. The product hit $300K&nbsp;ARR and
+            passed a third-party penetration test with zero critical findings.
+            Almost every line was written with AI coding tools and the workflow
+            I now teach.
           </p>
         </div>
       </div>

@@ -24,11 +24,12 @@ export default function CalendlyEmbed() {
           Get Started
         </p>
         <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-center mb-4">
-          Book a Session
+          Book Your Audit
         </h2>
         <p className="text-zinc-400 text-center mb-14 max-w-xl mx-auto font-light">
-          Pick a time that works for you. Discovery calls are free &mdash; no
-          commitment, just a conversation about how I can help.
+          Start with a free discovery call. We&apos;ll discuss your team, your
+          compliance requirements, and whether an Async AI Audit is the right
+          first step.
         </p>
         <div
           className="calendly-inline-widget rounded-2xl overflow-hidden border border-zinc-800/40"

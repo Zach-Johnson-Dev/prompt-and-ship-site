@@ -74,10 +74,10 @@ export default function About() {
                 development workflows that let small teams ship like big ones.
               </p>
               <p className="text-zinc-400 leading-relaxed font-light text-lg">
-                As VP of Product at Impact Suite, my 2-person dev team built a
-                full K-12 safety platform in 5 months using Claude Code &mdash;
-                almost every line of it. Now I help other teams and builders
-                unlock the same kind of speed.
+                Most recently I led a 2-engineer team that shipped a
+                regulated-industry SaaS to $300K&nbsp;ARR in 5&nbsp;months with
+                a clean pen test&mdash;using the agentic workflow I now help
+                other teams adopt.
               </p>
             </div>
           </div>

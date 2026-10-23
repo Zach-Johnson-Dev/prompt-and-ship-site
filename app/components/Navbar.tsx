@@ -53,7 +53,7 @@ export default function Navbar() {
             href="#booking"
             className="bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-full px-5 py-2 transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]"
           >
-            Book a Call
+            Book an Audit
           </a>
         </div>
 
@@ -97,7 +97,7 @@ export default function Navbar() {
               className="bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full px-5 py-2.5 text-center transition-all"
               onClick={() => setMobileOpen(false)}
             >
-              Book a Call
+              Book an Audit
             </a>
           </div>
         </div>

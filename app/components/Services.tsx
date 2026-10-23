@@ -2,74 +2,68 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const services = [
+interface ServiceTier {
+  name: string;
+  price: string;
+  duration: string;
+  description: string;
+}
+
+interface Service {
+  title: string;
+  subtitle: string;
+  tiers: ServiceTier[];
+  cta: string;
+  href: string;
+  highlight?: boolean;
+}
+
+const services: Service[] = [
   {
-    title: "Power Sessions",
-    subtitle: "One-off expert help",
+    title: "Async AI Audit",
+    subtitle: "Entry offer · credited toward Sprint",
     tiers: [
       {
-        name: "Quick Hit",
-        price: "$150",
-        duration: "30 min",
+        name: "Workflow & Security Review",
+        price: "$1,500",
+        duration: "one-time",
         description:
-          "Bug triage, deployment fixes, tool setup, quick architecture questions.",
-        href: "https://calendly.com/zach-zachjohnson/quick-hit-session",
-      },
-      {
-        name: "Deep Dive",
-        price: "$275",
-        duration: "60 min",
-        description:
-          "Pair-programming with AI tools, complex debugging, migration planning, architecture reviews.",
-        href: "https://calendly.com/zach-zachjohnson/deep-dive-session",
+          "I audit your current AI tooling, codebase, and compliance posture. You get a report with quick wins and a roadmap—plus the fee credits toward a Ship Sprint.",
       },
     ],
-    cta: "Book a Session",
-    href: "https://calendly.com/zach-zachjohnson/free-discovery-call",
+    cta: "Book Your Audit",
+    href: "#booking",
+    highlight: true,
   },
   {
-    title: "Team Onboarding",
-    subtitle: "Get your team up to speed",
+    title: "Ship Sprint",
+    subtitle: "Two weeks · full setup",
     tiers: [
       {
-        name: "Starter",
-        price: "$2,500",
-        duration: "1 week \u00b7 up to 5",
+        name: "Agentic Dev + Guardrails",
+        price: "$7,500",
+        duration: "2 weeks",
         description:
-          "Tool setup, workflow design, 2 live training sessions, async Slack support.",
+          "I set up your team's agentic dev workflow end-to-end: AI tooling, CI/CD pipelines, compliance checks, and pen-test guardrails built in. You ship faster and stay audit-ready.",
       },
+    ],
+    cta: "Start a Sprint",
+    href: "#booking",
+  },
+  {
+    title: "Agent-Ops Retainer",
+    subtitle: "After your Sprint",
+    tiers: [
       {
-        name: "Full Rollout",
-        price: "$6,000",
-        duration: "3 weeks \u00b7 up to 15",
+        name: "Ongoing Support",
+        price: "$1,500",
+        duration: "/month",
         description:
-          "4 live sessions, 1:1 office hours, custom docs, 2 weeks Slack support.",
+          "Async Slack access, workflow tune-ups, new-hire onboarding, and help prepping for audits and pen tests. Available to teams that have completed a Ship Sprint.",
       },
     ],
     cta: "Learn More",
-    href: "https://calendly.com/zach-zachjohnson/free-discovery-call",
-  },
-  {
-    title: "Monthly Retainer",
-    subtitle: "Ongoing async access",
-    tiers: [
-      {
-        name: "Solo Builder",
-        price: "$500",
-        duration: "/mo",
-        description:
-          "Slack channel access, up to 10 async questions/week, 1 included 30-min session/month.",
-      },
-      {
-        name: "Team",
-        price: "$2,000",
-        duration: "/mo \u00b7 up to 5",
-        description:
-          "Slack for up to 5 people, unlimited async questions, 2 included 60-min sessions/month.",
-      },
-    ],
-    cta: "Get Started",
-    href: "https://calendly.com/zach-zachjohnson/free-discovery-call",
+    href: "#booking",
   },
 ];
 
@@ -107,7 +101,7 @@ export default function Services() {
           }`}
           style={{ transitionDelay: "100ms" }}
         >
-          How I Can Help
+          How It Works
         </h2>
         <p
           className={`text-zinc-400 text-center mb-14 max-w-2xl mx-auto font-light transition-all duration-700 ${
@@ -115,15 +109,19 @@ export default function Services() {
           }`}
           style={{ transitionDelay: "200ms" }}
         >
-          Whether you need a quick fix, a team transformation, or ongoing
-          support &mdash; there&apos;s a plan for that.
+          Start with an Audit, graduate to a Sprint, then stay sharp with
+          ongoing support.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
             <div
               key={i}
-              className={`group bg-zinc-900/80 border border-zinc-800/80 rounded-2xl p-8 flex flex-col card-lift relative overflow-hidden transition-all duration-700 ${
+              className={`group bg-zinc-900/80 border rounded-2xl p-8 flex flex-col card-lift relative overflow-hidden transition-all duration-700 ${
+                service.highlight
+                  ? "border-blue-500/40"
+                  : "border-zinc-800/80"
+              } ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
@@ -131,7 +129,17 @@ export default function Services() {
               style={{ transitionDelay: `${300 + i * 150}ms` }}
             >
               {/* Gradient accent line */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+              <div
+                className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent to-transparent ${
+                  service.highlight ? "via-blue-400" : "via-blue-500"
+                }`}
+              />
+
+              {service.highlight && (
+                <span className="absolute top-4 right-4 font-mono text-[10px] text-blue-400 bg-blue-500/10 px-2 py-1 rounded-full border border-blue-500/20">
+                  Start here
+                </span>
+              )}
 
               <h3 className="font-heading text-xl font-bold mb-1">
                 {service.title}
@@ -158,25 +166,17 @@ export default function Services() {
                     <p className="text-sm text-zinc-500 leading-relaxed">
                       {tier.description}
                     </p>
-                    {"href" in tier && tier.href && (
-                      <a
-                        href={tier.href as string}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block mt-3 text-xs font-medium text-blue-400 hover:text-blue-300 transition-colors"
-                      >
-                        Book {tier.name} &rarr;
-                      </a>
-                    )}
                   </div>
                 ))}
               </div>
 
               <a
                 href={service.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 block text-center bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 font-medium rounded-xl px-6 py-3.5 transition-all border border-blue-500/20 hover:border-blue-500/40 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)]"
+                className={`mt-8 block text-center font-medium rounded-xl px-6 py-3.5 transition-all border ${
+                  service.highlight
+                    ? "bg-blue-500 hover:bg-blue-600 text-white border-blue-500 hover:border-blue-600 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]"
+                    : "bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 border-blue-500/20 hover:border-blue-500/40 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)]"
+                }`}
               >
                 {service.cta}
               </a>
