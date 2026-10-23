@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const problems = [
-  "Your team installed the AI tools. They\u2019re getting 10% of the value.",
-  "You\u2019re stuck on a bug in your vibe coding project and losing hours.",
-  "Your PMs and designers want to ship but can\u2019t get engineering time.",
+  "Your team uses AI coding tools—but compliance reviews still bottleneck every release.",
+  "Pen tests keep surfacing the same classes of vulnerabilities. You patch them, but they come back.",
+  "You're competing against teams 5× your size. You need to ship faster without cutting corners on security.",
 ];
 
 export default function Problem() {

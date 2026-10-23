@@ -15,13 +15,13 @@ export default function Hero() {
             className="hero-animate block text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.95]"
             style={{ animationDelay: "100ms" }}
           >
-            From Prompt
+            Ship Fast.
           </span>
           <span
             className="hero-animate block text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.95] mt-2"
             style={{ animationDelay: "280ms" }}
           >
-            to <span className="text-blue-400">Production</span>
+            Stay <span className="text-blue-400">Compliant.</span>
           </span>
         </h1>
 
@@ -30,8 +30,9 @@ export default function Hero() {
           className="hero-animate text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed font-light"
           style={{ animationDelay: "520ms" }}
         >
-          AI-powered development consulting for teams and builders who want to
-          ship faster.
+          Agentic dev workflows with compliance and pen-test guardrails
+          built&nbsp;in. For teams of 2–15 engineers selling into healthcare,
+          government, and other regulated markets.
         </p>
 
         {/* CTAs */}
@@ -40,18 +41,16 @@ export default function Hero() {
           style={{ animationDelay: "720ms" }}
         >
           <a
-            href="https://calendly.com/zach-zachjohnson/free-discovery-call"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#booking"
             className="bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full px-8 py-4 text-lg transition-all hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]"
           >
-            Book a Free Discovery Call
+            Book an AI Audit
           </a>
           <a
             href="#services"
             className="border border-zinc-700 hover:border-blue-500/50 text-zinc-100 font-medium rounded-full px-8 py-4 text-lg transition-all hover:bg-blue-500/5"
           >
-            See Services
+            See How It Works
           </a>
         </div>
 
@@ -60,9 +59,9 @@ export default function Hero() {
           className="hero-animate text-sm md:text-base text-zinc-500 max-w-2xl mx-auto leading-relaxed text-center"
           style={{ animationDelay: "960ms" }}
         >
-          Software engineering is no longer the bottleneck. You and your team
-          can build and ship 5–10x faster with AI tools. Get started today with
-          hands-on help with AI tools and workflows for individuals and teams.
+          A 2-engineer team shipped a regulated-industry SaaS to $300K&nbsp;ARR
+          in 5&nbsp;months with a clean pen test. I&apos;ll set up your team to
+          do the same.
         </p>
       </div>
     </section>

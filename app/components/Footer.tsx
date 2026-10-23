@@ -4,7 +4,7 @@ const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#about", label: "About" },
   { href: "#case-study", label: "Case Study" },
-  { href: "#booking", label: "Book a Call" },
+  { href: "#booking", label: "Book an Audit" },
 ];
 
 const socialLinks = [
